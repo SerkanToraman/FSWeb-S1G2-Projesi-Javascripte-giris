@@ -72,7 +72,7 @@ Aşağıdakileri yaparak carpma isimli fonksiyonu tamamla:
 function carpma(a,b) {
   return a*b;
 }
-// console.log(carpma(7,4));
+console.log(carpma(7,4));
 
 // function carpmaIki(a,b){
 //   return console.log(a*b);
@@ -114,25 +114,55 @@ OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı ye
 
 
 function oyun(oyuncu, bilgisayar) {
-  if(oyuncu === 'Makas'){
-    if(bilgisayar === 'Kagid'){
+    if(oyuncu===bilgisayar){
+      return 'Beraberlik'
+  }
+    else if(oyuncu === 'Makas'){
+    if(bilgisayar === 'Kağıt'){
       return 'Kazandın!';
+    }else{
+      return 'Kaybettin!'
     }
-  } else if(oyuncu === 'Kagid'){
-      if(bilgisayar === 'Tas'){
+  } else if(oyuncu === 'Kağıt'){
+      if(bilgisayar === 'Taş'){
       return 'Kazandın!';
+    } else{
+      return 'Kaybettin!'
     }
-  } else if(oyuncu === 'Tas'){
+  } else if(oyuncu === 'Taş'){
       if(bilgisayar === 'Makas'){
       return 'Kazandın!';
+    } else{
+      return 'Kaybettin!'
     }
-  } else if(oyuncu.equals(bilgisayar)){
-      return 'Beraberlik!';
-  } else {
-      return 'Kaybettin!';
   } 
 }
-console.log(oyun('Tas','Tas'));
+
+// function oyun(oyuncu, bilgisayar) {
+//     if(oyuncu === 'Makas'){
+//       if(bilgisayar === 'Kağıt'){
+//       return 'Kazandın!';
+//     }else{
+//       return 'Kaybettin!'
+//     }
+//   } else if(oyuncu === 'Kağıt'){
+//       if(bilgisayar === 'Taş'){
+//       return 'Kazandın!';
+//     } else{
+//       return 'Kaybettin!'
+//     }
+//   } else if(oyuncu === 'Taş'){
+//       if(bilgisayar === 'Makas'){
+//       return 'Kazandın!';
+//     } else{
+//       return 'Kaybettin!'
+//     }
+//   } else if(oyuncu===bilgisayar){
+//     return 'Beraberlik'
+//   } 
+// }
+
+console.log(oyun('Makas','Taş'));
 
 // Şimdi Taş, Kağıt, Makas oyununu bilgisayara karşı oynayalım!
 /*
@@ -158,6 +188,13 @@ function bilgisayarinSecimi(){
 
 console.log(bilgisayarinSecimi());
 
+// switch (oyuncu){
+//   case 'Makas' :
+//     if(bilgisayarinSecimi == 'Makas'){
+//       return 'Kazandın!'
+//     }
+// }
+
 
 /* Görev 4 : Metrik Dönüştürücü */
 
@@ -170,7 +207,7 @@ Aşağdaki milDonusturucu fonksiyonunu aşağıdakileri kullanarak tamamla:
 */
 
 function milDonusturucu(km) {
-  let mil = km/1.609344;
+  let mil = km*0.621371;
   return mil;
 }
 console.log(milDonusturucu(10));
@@ -186,7 +223,7 @@ Google'da arama ipucu: "feet cm dönüştürme"
 */
 
 function feetDonusturucu(cm) {
- return cm*30.48;
+ return cm/30.48;
 }
 console.log(feetDonusturucu(1));
 
@@ -205,12 +242,12 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yap:
 
 
 function cocukSarkisi(a) {
-  return a + ' küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kmış: Bir daha yatakta zıplamak yok!'
+  return a + ' küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!'
 }
 
-console.log(cocukSarkisi(10));
+console.log(cocukSarkisi(5));
 
-let i= 10;
+let i= 5;
 
 for(i;i>0;i=i-1){
   console.log(cocukSarkisi(i));
