@@ -180,20 +180,52 @@ console.log(oyun('Makas','Taş'));
 Örn: console.log(oyun("Makas",bilgisayarinSecimi()))
 */ 
 
+
+function game(player,bilgisayar){
+  switch (player){
+  case 'Makas' :
+    if(bilgisayar == 'Makas'){
+        return 'Beraberlik!'
+    } else if (bilgisayar == 'Kağıt'){
+        return 'Kazandın'
+    } else{
+        return 'Kaybettin!'
+    }
+  case 'Taş' :
+    if(bilgisayar == 'Taş'){
+        return 'Beraberlik!'
+    } else if (bilgisayar == 'Makas'){
+        return 'Kazandın'
+    } else{
+        return 'Kaybettin!'
+    }
+    case 'Kağıt' :
+    if(bilgisayar == 'Kağıt'){
+        return 'Beraberlik!'
+    } else if (bilgisayar == 'Taş'){
+        return 'Kazandın'
+    } else{
+        return 'Kaybettin!'
+    }
+  }
+};
+
 function bilgisayarinSecimi(){
-  let RandomSayi = Math.round(Math.random()*10);
-  let secim = (RandomSayi<4) ? "Tas" : (RandomSayi>=4) && (RandomSayi<=7) ? "Makas":"Kagit";
+  let randomSayi = Math.ceil(Math.random()*30);
+  let secim;
+  if(randomSayi>=0 && randomSayi<=10){
+    secim = 'Makas'
+  } else if (randomSayi>10 && randomSayi<=20){
+    secim = 'Kağıt'
+  } else {
+    secim = 'Taş'
+  } 
   return secim;
 }
+let bilgisayarinSecimiSonuc = bilgisayarinSecimi();
+console.log('bilgisayarsecimideger',bilgisayarinSecimiSonuc);
 
-console.log(bilgisayarinSecimi());
-
-// switch (oyuncu){
-//   case 'Makas' :
-//     if(bilgisayarinSecimi == 'Makas'){
-//       return 'Kazandın!'
-//     }
-// }
+console.log(game('Taş',bilgisayarinSecimiSonuc));
 
 
 /* Görev 4 : Metrik Dönüştürücü */
