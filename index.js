@@ -188,6 +188,7 @@ function game(player,bilgisayar){
         return 'Beraberlik!'
     } else if (bilgisayar == 'Kağıt'){
         return 'Kazandın'
+
     } else{
         return 'Kaybettin!'
     }
@@ -326,17 +327,33 @@ Aşağıdakileri sesliHarfSayaci fonskiyonunda yap.
 İPUCU - .includes() methoduna bakabilirsin. (https://www.w3schools.com/jsref/jsref_includes.asp)
 */
 
+// function sesliHarfSayaci(a) {
+//   let kucukHarfler = a.toLowerCase();
+//   let kucukHarflerSayisi =0;
+//   for(i=0;i<=kucukHarfler.length-1;i++){
+//     if('aeıioöuü'.includes(kucukHarfler[i])){
+//       kucukHarflerSayisi +=1;
+//     }
+//   }  
+//   return kucukHarflerSayisi;
+// }
+// console.log('sesliHarfSayaci ->',sesliHarfSayaci('SerKantOraMAn'));
+
+
 function sesliHarfSayaci(a) {
-  let kucukHarfler = a.toLowerCase();
-  let kucukHarflerSayisi =0;
-  for(i=0;i<=kucukHarfler.length-1;i++){
-    if('aeıioöuü'.includes(kucukHarfler[i])){
-      kucukHarflerSayisi +=1;
+    let kucukHarfler =Array.from(a.toLowerCase());
+    // console.log(kucukHarfler);
+    const kucukHarflerSayisi = kucukHarfler.reduce((sayac,num) => {
+      console.log(sayac,num);
+      if('aeıioöuü'.includes(num)){
+        sayac++;
+       }
+       return sayac;
+      },0)
+      return kucukHarflerSayisi;
     }
-  }  
-  return kucukHarflerSayisi;
-}
-console.log(sesliHarfSayaci('SerKantOraMAn'));
+
+  console.log('sesliHarfSayaci ->',sesliHarfSayaci('SerKantOraMAn'));
 
 
 // function vowelCount(a){
